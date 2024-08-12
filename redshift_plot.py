@@ -10,8 +10,6 @@ def f(x, y):
     # full coordinate translation expresion 
     # return -0.25 * (y**2 + 2*y*(delta) + (delta)**2) + 0.5*(x**2 + 2*x*(delta) + (delta)**2)*(y**2 + 2*y*(delta) + (delta)**2)
 
-    
-
     ## Higher- order terms, up to x**4 * y**4
     #return 0.5*(-(y**2)/2 + (x**2 * y**2) - (x**4 * y**2)/3 + (y**4)/24 - (x**2 * y**4)/12 + (x**4 * y**4)/36)
 

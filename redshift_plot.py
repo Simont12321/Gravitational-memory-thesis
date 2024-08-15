@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def f(x, y):
     delta = 0.5  # coordinate translation 
 
-    return -0.25 * (y+0)**2 + 0.5 * (x+0)**2 * (y+0)**2 # first approximation 
+    return -0.25 * (y+0.8)**2 + 0.5 * (x+0.3)**2 * (y+0.8)**2 # first approximation 
 
     # full coordinate translation expresion 
     # return -0.25 * (y**2 + 2*y*(delta) + (delta)**2) + 0.5*(x**2 + 2*x*(delta) + (delta)**2)*(y**2 + 2*y*(delta) + (delta)**2)
@@ -17,8 +17,9 @@ def f(x, y):
 
 
 # Create a grid of x and y values from -2 to 2
-x = np.linspace(-2, 2, 400)
-y = np.linspace(-2, 2, 400)
+max_value = 3
+x = np.linspace(-max_value, max_value, 400)
+y = np.linspace(-max_value, max_value, 400)
 X, Y = np.meshgrid(x, y)
 Z = f(X, Y)
 
@@ -28,10 +29,11 @@ contour = plt.contourf(X, Y, Z, levels=50, cmap='RdBu')
 zero_contour = plt.contour(X, Y, Z, levels=[0], colors='lime', linewidths=2)
 
 # Add labels and a color bar
-plt.title(r'Plot of initial redshift $z = -\frac{1}{4}y^2 + \frac{1}{2}x^2y^2$')
+plt.title(r'Plot of initial redshift with (0.3, 0.8) displacement $z = -\frac{1}{4}y^2 + \frac{1}{2}x^2y^2$')
 plt.xlabel(r'$\theta_x$')
 plt.ylabel(r'$\theta_y$')
 plt.colorbar(contour, label='Scale in terms of $h_M$')
+
 
 # Add a label for the zero contour
 plt.clabel(zero_contour, fmt='%1.1f', colors='black')

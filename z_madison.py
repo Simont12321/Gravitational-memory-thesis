@@ -9,7 +9,7 @@ phi_values = np.linspace(-2, 2, 200)    # Range of phi from -2 to 2
 Theta, Phi = np.meshgrid(theta_values, phi_values)
 
 # Calculate the expression
-expression = 0.25 * (np.exp(-2j * Phi) + np.exp(2j * Phi)) * (1 - np.cos(Theta))
+expression = 0.25 * (np.exp(-2j * (Phi + 0)) + np.exp(2j * (Phi + 0))) * (1 - np.cos((Theta + 0)))
 
 # Separate the real and imaginary parts for plotting
 real_part = expression.real

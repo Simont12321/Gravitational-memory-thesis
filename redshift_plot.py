@@ -29,7 +29,7 @@ contour = plt.contourf(X, Y, Z, levels=50, cmap='RdBu')
 zero_contour = plt.contour(X, Y, Z, levels=[0], colors='lime', linewidths=2)
 
 # Add labels and a color bar
-plt.title(r'Plot of initial redshift with (0.3, 0.8) displacement $z = -\frac{1}{4}y^2 + \frac{1}{2}x^2y^2$')
+plt.title(r'Plot of initial redshift approximation with (0.3, 0.8) displacement $z = -\frac{1}{4}y^2 + \frac{1}{2}x^2y^2$')
 plt.xlabel(r'$\theta_x$')
 plt.ylabel(r'$\theta_y$')
 plt.colorbar(contour, label='Scale in terms of $h_M$')

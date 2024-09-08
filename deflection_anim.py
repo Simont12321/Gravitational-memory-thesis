@@ -11,8 +11,8 @@ y = np.linspace(-max_value, max_value, 20)
 X, Y = np.meshgrid(x, y)
 
 # coordinate translation
-delx = 0.7
-dely = 0.3
+delx = 0
+dely = 0
 
 # Define the vector field function
 def vector_field(B, X, Y):
@@ -42,6 +42,7 @@ def update(B):
     quiver.set_UVC(U, V)
     return quiver,
 
+
 # Add a slider for the B parameter
 ax_B_slider = plt.axes([0.95, 0.25, 0.03, 0.5])  # Adjust position for vertical slider
 B_slider = Slider(ax_B_slider, r'$\beta$', 0, 2, valinit=B0, orientation='vertical')
@@ -55,7 +56,7 @@ B_slider.on_changed(update)
 
 
 """
-### Create an animation, comment out the slider lines above 
+### To create an animation, comment out the slider lines above and uncomment this section
 ani = FuncAnimation(
     fig, update, frames=np.linspace(0, 2, 100), interval=100, blit=True, repeat=True
 )

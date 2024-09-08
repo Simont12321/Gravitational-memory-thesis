@@ -3,9 +3,11 @@ import matplotlib.pyplot as plt
 
 # Define the function
 def f(x, y):
-    delta = 0.5  # coordinate translation 
+    
+    del_x = -0.3
+    del_x = -0.8
 
-    return -0.25 * (y+0.8)**2 + 0.5 * (x+0.3)**2 * (y+0.8)**2 # first approximation 
+    return -0.25 * (y+del_x)**2 + 0.5 * (x+del_x)**2 * (y+del_x)**2 # first approximation 
 
     # full coordinate translation expresion 
     # return -0.25 * (y**2 + 2*y*(delta) + (delta)**2) + 0.5*(x**2 + 2*x*(delta) + (delta)**2)*(y**2 + 2*y*(delta) + (delta)**2)

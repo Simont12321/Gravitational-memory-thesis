@@ -14,7 +14,7 @@ def f(x, y, del_x, del_y):
 
     #return 0.5*(-(y**2)/2 + (x**2 * y**2) + (y**4)/24) # max is y**4 
 
-# GW displacement 
+# GW displacement
 del_x = 1
 del_y = 0.5
 

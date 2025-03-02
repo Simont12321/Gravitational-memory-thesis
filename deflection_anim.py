@@ -4,8 +4,6 @@ import matplotlib.animation as animation
 from matplotlib.widgets import Slider
 from matplotlib.animation import FuncAnimation
 
-# test if we change
-
 # Define the grid for x and y
 max_value = 3
 x = np.linspace(-max_value, max_value, 20)

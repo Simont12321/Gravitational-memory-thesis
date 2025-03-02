@@ -24,9 +24,11 @@ def vector_field(B, X, Y):
 fig, ax = plt.subplots(figsize=(8, 8))
 ax.set_xlim(-max_value, max_value)
 ax.set_ylim(-max_value, max_value)
-ax.set_xlabel(r'$\theta_x$', fontsize=20)
-ax.set_ylabel(r'$\theta_y$', fontsize=20)
-ax.set_title('Flat sky angular deflection approximation as a function of '+ r'$\beta$', fontsize = 15)
+ax.set_xlabel('Degrees', fontsize=20)
+ax.set_ylabel('Degrees', fontsize=20)
+#ax.set_xlabel(r'$\theta_x$', fontsize=20)
+#ax.set_ylabel(r'$\theta_y$', fontsize=20)
+ax.set_title('Angular deflection approximation as a function of time', fontsize = 15)
 
 # Set the size of the axes tick marks
 ax.tick_params(axis='both', which='major', labelsize=15)
@@ -43,6 +45,8 @@ def update(B):
     return quiver,
 
 
+
+"""
 # Add a slider for the B parameter
 ax_B_slider = plt.axes([0.95, 0.25, 0.03, 0.5])  # Adjust position for vertical slider
 B_slider = Slider(ax_B_slider, r'$\beta$', 0, 2, valinit=B0, orientation='vertical')
@@ -51,11 +55,13 @@ B_slider = Slider(ax_B_slider, r'$\beta$', 0, 2, valinit=B0, orientation='vertic
 B_slider.label.set_fontsize(15)
 B_slider.valtext.set_fontsize(15)
 
+
 # Set the update function for the slider
 B_slider.on_changed(update)
-
-
 """
+
+
+
 ### To create an animation, comment out the slider lines above and uncomment this section
 ani = FuncAnimation(
     fig, update, frames=np.linspace(0, 2, 100), interval=100, blit=True, repeat=True
@@ -65,8 +71,8 @@ ani = FuncAnimation(
 writer = animation.PillowWriter(fps=15,
                                 metadata=dict(artist='Me'),
                                 bitrate=1800)
-ani.save('deflections.gif', writer=writer)
-"""
+ani.save('deflections_2.gif', writer=writer)
+
 
 plt.grid()
 plt.show()

@@ -15,11 +15,11 @@ def f(x, y, del_x, del_y):
     #return 0.5*(-(y**2)/2 + (x**2 * y**2) + (y**4)/24) # max is y**4 
 
 # GW displacement 
-del_x = 1
-del_y = 0.5
+del_x = 0
+del_y = 0
 
 # Create a grid of x and y values from -2 to 2
-max_value = 3
+max_value = 2
 x = np.linspace(-max_value, max_value, 400)
 y = np.linspace(-max_value, max_value, 400)
 X, Y = np.meshgrid(x, y)
@@ -31,9 +31,11 @@ contour = plt.contourf(X, Y, Z, levels=50, cmap='RdBu')
 zero_contour = plt.contour(X, Y, Z, levels=[0], colors='lime', linewidths=2)
 
 # Add labels and a color bar
-plt.title(f'Plot of initial redshift approximation for a GW at ({del_x}, {del_y})')  # $z = -\frac{1}{4}y^2 + \frac{1}{2}x^2y^2$
-plt.xlabel(r'$\theta_x$')
-plt.ylabel(r'$\theta_y$')
+plt.title(f'Initial redshift approximation')  # for a GW propagating into ({del_x}, {del_y}), $z = -\frac{1}{4}y^2 + \frac{1}{2}x^2y^2$
+plt.xlabel('Degrees')
+plt.ylabel('Degrees')
+#plt.xlabel(r'$\theta_x$')
+#plt.ylabel(r'$\theta_y$')
 plt.colorbar(contour, label='Scale in terms of $h_M$')
 
 
